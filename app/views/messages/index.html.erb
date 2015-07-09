@@ -11,12 +11,22 @@
     <% end %>
   </div>
 </div>
-
-<%= form_for(Message.new) do |f| %>
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit %>
-<% end %>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    投稿
+  </div>
+    <div class="panel-body">
+      <div class="form">
+        <div class="form-group">
+          <%= form_for(Message.new) do |f| %>
+            名前:
+            <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            内容:
+            <%= f.text_area :body, class: "form-control" %>
+        </div>
+            <%= f.submit class: "btn btn-sm btn-danger" %>
+          <% end %>
+    </div>
+</div>
